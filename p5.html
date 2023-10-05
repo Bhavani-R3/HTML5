@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sub {
+            width: 500px;
+            padding: 40px;
+            text-align: center;
+            background-color: #aaa;
+            box-shadow: 3px 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        #close {
+            float: right;
+            background-color: orangered;
+            padding: 4px 6px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h3>Dialog</h3>
+    <button id="show">Show dialog</button>
+
+    <dialog class="sub" id="myDialog">
+        <button id="close">Hide</button>
+
+        <h3>Login</h3>
+        <form action="">
+            <div>
+                <label for="user">UserName</label>
+                <input type="text" name="user" id="user" required>
+            </div>
+            <div>
+                <label for="pass">Password</label>
+                <input type="password" name="pass" id="pass" required>
+            </div>
+            <div>
+                <input type="submit" value="Login">
+            </div>
+        </form>
+    </dialog>
+
+    <script>
+        var myDialog = document.getElementById("myDialog");
+
+        document.getElementById("show").onclick = function() {
+            myDialog.show();
+        }
+
+        document.getElementById("close").onclick = function() {
+            myDialog.close();
+        }
+    </script>
+</body>
+</html>
